@@ -33,7 +33,7 @@ var Maze = function(doc, elemId) {
     },
 
     solve: function() {
-      self.generator.solve();
+      self.generator.getSolution();
       this.drawSolution();
     },
 
