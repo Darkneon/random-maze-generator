@@ -1,5 +1,9 @@
 # Random maze generator/solver
 
+## About this fork
+
+This is a exercise used for a tutorial on backtracking for SCS Concordia. Student must implement the solve() function and fill the path variable with the solution to the maze. 
+
 ## Overview
 
 This is just a simple random maze generator and solver I wrote for fun that gets drawn over a canvas on the page. It is fully written in JavaScript and tested with Jasmine.
