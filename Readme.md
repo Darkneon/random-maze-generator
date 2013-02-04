@@ -2,7 +2,7 @@
 
 ## About this fork
 
-This is an exercise used for a tutorial on backtracking for SCS Concordia. Student must implement the solve() function and fill the path variable with the solution to the maze. 
+This is an exercise used for a tutorial on backtracking for SCS Concordia. Students must implement the solve() function and fill the path variable with the solution to the maze. 
 
 ## Overview
 
