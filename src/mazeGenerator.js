@@ -23,8 +23,24 @@ var MazeGenerator = function(rows, cols) {
   };
  
   var solve = function(cell) {
-    alert("Do me!");
+    if (cell.marked === true) { return false; }
+    cell.marked = true;
     self.path.push(cell);
+
+    if (cell === self.graph.getCellAt(self.graph.width - 1, self.graph.height - 1)) {
+      return true;
+    }
+    else {
+      var paths = self.graph.cellDisconnectedNeighbors(cell);
+      for (var i = 0; i < paths.length; i++) {
+        if (solve(paths[i]) === true) {
+          return true;
+        }
+      }
+    }
+    
+    cell.marked = false;
+    self.path = removeCellFromArray(self.path, cell);
     return false;
   }
 
