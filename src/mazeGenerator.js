@@ -24,18 +24,19 @@ var MazeGenerator = function(rows, cols) {
  
   var solve = function(cell) {
     if (cell.marked === true) { return false; }
+
+    if (cell === self.graph.getCellAt(self.graph.width - 1, self.graph.height - 1)) { 
+        self.path.push(cell);
+        return true;
+    }
+
     cell.marked = true;
     self.path.push(cell);
 
-    if (cell === self.graph.getCellAt(self.graph.width - 1, self.graph.height - 1)) {
-      return true;
-    }
-    else {
-      var paths = self.graph.cellDisconnectedNeighbors(cell);
-      for (var i = 0; i < paths.length; i++) {
-        if (solve(paths[i]) === true) {
-          return true;
-        }
+    var paths = self.graph.cellDisconnectedNeighbors(cell);
+    for (var i = 0; i < paths.length; i++) {
+      if (solve(paths[i]) === true) {
+        return true;
       }
     }
     
